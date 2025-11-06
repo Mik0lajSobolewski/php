@@ -8,8 +8,6 @@
 </head>
 <body>
     <form action="strona.php" method="POST">
-    <label>ID:</label>
-    <input type="number" name="id"><br>
     <label>Imię:</label>
     <input type="text" name="imie"><br>
     <label>Nazwisko:</label>
@@ -21,8 +19,12 @@
     $id = $_POST['id'];
     $imie = $_POST['imie'];
     $nazwisko = $_POST['nazwisko'];
-    echo "ID: " . $id . " Imie: " . $imie . " Nazwisko: " . $nazwisko; 
-    }
+    echo "Imie: " . $imie . '<br>' . " Nazwisko: " . $nazwisko; 
+    $con = mysqli_connect('localhost', 'root', "", 'uczeń');
+    $zapytanie = "INSERT INTO 'uczniowie' ('Imie', 'Nazwisko') VALUES ('$imie', '$nazwisko')";
+    $wynik = mysqli_query($con, $zapytanie)
+    mysqli_close($con)
+}
     ?>
 </body>
 </html>
