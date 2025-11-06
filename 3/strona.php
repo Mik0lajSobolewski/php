@@ -14,20 +14,14 @@
         <option value="Jan">Jan</option>
         <option value="Kacper">Kacper</option>
     </select><br>
-    <label>Nazwisko:</label>
-    <input type="text" name="nazwisko"><br>
     <button type="submit">Wyślij</button>
     </form>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $imie = $_POST['imie'];
-    $nazwisko = $_POST['nazwisko'];
-    echo "Imie: " . $imie . '<br>' . " Nazwisko: " . $nazwisko; 
+    echo "Imie: " . $imie; 
     $con = mysqli_connect("localhost", "root", "", "szkola");
-    $zapytanie = "INSERT INTO uczeń (IMIĘ, NAZWISKO) VALUES ('$imie', '$nazwisko')";
-    mysqli_query($con, $zapytanie);
-}
-    $zapytanie1 = "select * from Uczeń;";
+    $zapytanie1 = "SELECT * from Uczeń WHERE imie = '$imie';";
     $wyniki = mysqli_query($con, $zapytanie1);
     echo
         '<table>
@@ -42,6 +36,7 @@
     }
     echo '</table>';
     mysqli_close($con);
+    }
     ?>
 </body>
 </html>
