@@ -1,0 +1,36 @@
+* {
+    font-family: arial;
+    margin: 0;
+    padding: 0;
+}
+header, footer {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(77, 71, 71);
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+}
+.srodek {
+    display: flex;
+}
+aside {
+    width: 10%;
+    height: 500px;
+    background-color: rgb(218, 215, 211);
+    text-align: center;
+}
+main {
+    width: 90%;
+    height: 500px;
+    background-color: rgb(197, 192, 184);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+th, td, table {
+    border: solid 2px black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 10px;
+}
